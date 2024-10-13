@@ -83,7 +83,7 @@ public class estrazionegruppi {
 				
 			}
 			
-			String gruppi;
+			String gruppi;	//Stringa che conterrà i gruppi finali
 			
 			if(nomiMembri.length > 1) {
 				//Uso la funzione per trovare i 2 gruppi che forniscono il massimo valore medio
