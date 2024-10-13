@@ -82,9 +82,19 @@ public class estrazionegruppi {
 				riga = riga + 1;
 				
 			}
-				
-			//Uso la funzione per trovare i 2 gruppi che forniscono il massimo valore medio
-			String gruppi = partizionamento(valoriMembri, nomiMembri);
+			
+			String gruppi;
+			
+			if(nomiMembri.length > 1) {
+				//Uso la funzione per trovare i 2 gruppi che forniscono il massimo valore medio
+				gruppi = partizionamento(valoriMembri, nomiMembri);
+			
+			} else {
+				//Se la tabella contiene 1 sola persona allora ritorno solo il nome di quella persona come gruppo
+				gruppi = nomiMembri[0];
+			}
+			
+			
 			
 			//Stampo i gruppi ottenuti "(gruppo1) / (gruppo2)"
 			System.out.println(gruppi);
@@ -195,14 +205,17 @@ public class estrazionegruppi {
 				for(int k=0; k < gruppo1.length; k++) {
 					
 					partizionamentoMigliore = partizionamentoMigliore.concat( nomiMembri[ gruppo1[k] ] );
+					//ALTERNATIVA (per separare i nomi): partizionamentoMigliore = partizionamentoMigliore.concat( " " );
 				}
 				
 				partizionamentoMigliore = partizionamentoMigliore.concat( " / " );	//Usiamo il carattere "/" per separare i 2 gruppi
+				//ALTERNATIVA (da usare se si usano le altre ALTERNATIVE per separare i nomi): partizionamentoMigliore = partizionamentoMigliore.concat( "/ " );
 				
 				//Salviamo nella stringa i membri del GRUPPO 2
 				for(int k=0; k < gruppo2.length; k++) {
 					
 					partizionamentoMigliore = partizionamentoMigliore.concat( nomiMembri[ gruppo2[k] ] );
+					//ALTERNATIVA (per separare i nomi): partizionamentoMigliore = partizionamentoMigliore.concat( " " );
 				}
 			}
 			
